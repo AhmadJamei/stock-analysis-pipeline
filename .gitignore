@@ -1,7 +1,27 @@
+# Virtual environment
 venv/
+.env/
+
+# Python cache
 __pycache__/
 *.pyc
-data/raw/
-data/processed/
+*.pyo
+
+# Data (ignore all, keep structure)
+data/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Config (API keys)
 config.py
-.env
