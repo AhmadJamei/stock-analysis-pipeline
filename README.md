@@ -19,14 +19,15 @@ The goal of this project is to simulate a real-world data pipeline:
 
 ## 🏗️ Project Structure
 
-´´´src/
-├── ingestion/ # Fetch data from API
-├── processing/ # Data cleaning
-├── features/ # Feature engineering
-├── analysis/ # Visualization & insights
-├── strategies/ # Backtesting logic
-main.py
-´´´
+```
+src/
+  ├── ingestion/ # Fetch data from API
+  ├── processing/ # Data cleaning
+  ├── features/ # Feature engineering
+  ├── analysis/ # Visualization & insights
+  ├── strategies/ # Backtesting logic
+  main.py
+```
 
 ---
 
@@ -39,10 +40,6 @@ main.py
 ### Backtesting
 - Strategy based on moving average signals
 - Results stored in `data/processed/backtest.csv`
-### Backtesting
-
-- A simple strategy was implemented using moving average signals
-- Backtest results are stored in: `data/processed/backtest.csv`
 
 ---
 
@@ -56,17 +53,26 @@ main.py
 ---
 
 ## 🚀 How to Run
-
+```
+1. Clone repository:
 git clone https://github.com/AhmadJamei/stock-analysis-pipeline.git
-cd stock-analysis-pipeline
 
+2. Create virtual environment:
 python -m venv venv
+
+3. Activate:
 venv\Scripts\activate  # Windows
 
+4. Install dependencies:
 pip install -r requirements.txt
 
-python main.py
+5. Set API key:
+Create `.env` file:
+ALPHA_VANTAGE_API_KEY=your_api_key_here
 
+6. Run:
+python main.py
+```
 
 ---
 
@@ -81,6 +87,22 @@ python main.py
 
 ---
 
+## 💡 Key Insights
+
+```
+- Short-term momentum strongly drives price (ma_5)
+- Volume shows inverse relationship with price
+- Volatility spikes during market downturns
+
+## ⚡ What this project demonstrates
+
+- Data pipeline design
+- API integration
+- Data cleaning & feature engineering
+- Visualization & analysis
+- Basic quantitative strategy development
+```
+---
 ## 📌 Notes
 
 - Data is fetched using Alpha Vantage free API (rate limited)
