@@ -26,7 +26,7 @@ src/
   ├── features/ # Feature engineering
   ├── analysis/ # Visualization & insights
   ├── strategies/ # Backtesting logic
-  main.py
+main.py
 ```
 
 ---
@@ -53,25 +53,25 @@ src/
 ---
 
 ## 🚀 How to Run
-```
+```bash
 1. Clone repository:
-git clone https://github.com/AhmadJamei/stock-analysis-pipeline.git
+   git clone https://github.com/AhmadJamei/stock-analysis-pipeline.git
 
 2. Create virtual environment:
-python -m venv venv
+   python -m venv venv
 
 3. Activate:
-venv\Scripts\activate  # Windows
+   venv\Scripts\activate  # Windows
 
 4. Install dependencies:
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 5. Set API key:
-Create `.env` file:
-ALPHA_VANTAGE_API_KEY=your_api_key_here
+   Create `.env` file:
+   ALPHA_VANTAGE_API_KEY=your_api_key_here
 
 6. Run:
-python main.py
+   python main.py
 ```
 
 ---
