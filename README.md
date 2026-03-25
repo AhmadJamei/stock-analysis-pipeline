@@ -6,14 +6,14 @@ A Python-based data pipeline for fetching, processing, analyzing, and backtestin
 
 ## 🎯 Project Goal
 
-The goal of this project is to simulate a real-world data pipeline:
+This project demonstrates an end-to-end data pipeline for financial data:
 
 - Data ingestion from external API (Alpha Vantage)
 - Data cleaning and preprocessing
 - Feature engineering (moving averages, returns, volatility)
-- Data analysis and correlation study
+- Exploratory data analysis and correlation study
 - Visualization of stock trends and signals
-- Simple backtesting of a trading strategy
+- Experimental backtesting of a simple trading strategy
 
 ---
 
@@ -21,11 +21,11 @@ The goal of this project is to simulate a real-world data pipeline:
 
 ```
 src/
-  ├── ingestion/ # Fetch data from API
-  ├── processing/ # Data cleaning
-  ├── features/ # Feature engineering
-  ├── analysis/ # Visualization & insights
-  ├── strategies/ # Backtesting logic
+├── ingestion/
+├── processing/
+├── features/
+├── analysis/
+├── strategies/
 main.py
 ```
 
@@ -33,45 +33,57 @@ main.py
 
 ## 📊 Results
 
-- Strong correlation between ma_5 and close (~0.87 based on dataset)
+- Strong correlation observed between short-term moving average (ma_5) and closing price
 - Volume shows weak negative correlation with price
-- Volatility increases during price drops
+- Volatility tends to increase during market downturns
 
 ### Backtesting
 - Strategy based on moving average signals
-- Results stored in `data/processed/backtest.csv`
+- Total Return: **-14.10%**
+- Sharpe Ratio: **-2.19**
+- Max Drawdown: **-18.46%**
+- Win Rate: **47.50%**
 
 ---
 
 ## 📈 Visualization
 
-- Correlation heatmap between features
-- Price chart with technical indicators
+- Correlation heatmap
+- Price chart with moving averages
 - Trading signals visualization
+
 ![Correlation](assets/correlation.png)
 ![Price Chart](assets/price_chart.png)
+
 ---
 
 ## 🚀 How to Run
+
+### 1. Clone repository
 ```bash
-1. Clone repository:
-   git clone https://github.com/AhmadJamei/stock-analysis-pipeline.git
+git clone https://github.com/AhmadJamei/stock-analysis-pipeline.git
+cd stock-analysis-pipeline
+```
 
-2. Create virtual environment:
-   python -m venv venv
+### 2. Create virtual environment
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
-3. Activate:
-   venv\Scripts\activate  # Windows
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
-4. Install dependencies:
-    pip install -r requirements.txt
+### 4. Set API key
+```env
+ALPHA_VANTAGE_API_KEY=your_api_key_here
+```
 
-5. Set API key:
-   Create `.env` file:
-   ALPHA_VANTAGE_API_KEY=your_api_key_here
-
-6. Run:
-   python main.py
+### 5. Run
+```bash
+python main.py
 ```
 
 ---
@@ -83,27 +95,27 @@ main.py
 - NumPy
 - Matplotlib
 - Seaborn
+- Streamlit
 - Alpha Vantage API
 
 ---
 
 ## 💡 Key Insights
 
-```
 - Short-term momentum strongly drives price (ma_5)
 - Volume shows inverse relationship with price
 - Volatility spikes during market downturns
 
 ## ⚡ What this project demonstrates
 
-- Data pipeline design
+- End-to-end data pipeline design
 - API integration
-- Data cleaning & feature engineering
-- Visualization & analysis
-- Basic quantitative strategy development
-```
+- Data preprocessing & feature engineering
+- Data visualization & analysis
+- Experimental quantitative strategy implementation
+
 ---
 ## 📌 Notes
 
-- Data is fetched using Alpha Vantage free API (rate limited)
-- Raw and processed data are stored locally   
+- Data is fetched using Alpha Vantage (rate limited)
+- ll processed data is stored locally

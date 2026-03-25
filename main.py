@@ -3,7 +3,9 @@ from src.processing.data_cleaning import load_and_clean
 from src.features.feature_engineering import create_features
 from src.analysis.visualization import plot_correlation, plot_price_with_signals
 from src.analysis.backtesting import backtest_strategy
+import os
 
+os.makedirs("data/processed", exist_ok=True)
 def main():
     # 1. Data ingestion
     df_raw = fetch_stock("AAPL")
